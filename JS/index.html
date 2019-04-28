@@ -109,24 +109,24 @@
       document.getElementById("cor").style[name] = num;
     }
 
-    function validate_required(filed,alerttxt){
-      with(filed){
-        if(value==null||value==""){
+    function validate_required(filed, alerttxt) {
+      with(filed) {
+        if (value == null || value == "") {
           alert(alerttxt);
           return false;
-        }else{
+        } else {
           return true;
         }
       }
     }
 
-    function validate_form(thisform){
-      with(thisform){
-        if(validate_required(a,"a空")==false){
+    function validate_form(thisform) {
+      with(thisform) {
+        if (validate_required(a, "a空") == false) {
           a.fouse();
           return false;
         }
-        if(validate_required(b,"b空")==false){
+        if (validate_required(b, "b空") == false) {
           b.focus();
           return false;
         }
