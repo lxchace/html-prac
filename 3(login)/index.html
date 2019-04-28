@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" href="style.css" charset="utf-8">
+  <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+  <div class="show-login-btn"><i class="fa fa-sign-in"></i> Show Login Form</div>
+  <div class="login-box">
+    <div class="hide-login-btn"><i class="fa fa-close"></i></div>
+    <form class="login-form" action="index.html" method="post">
+      <h1>Welcome</h1>
+      <input class="txtb" type="text" name="" placeholder="Username">
+      <input class="txtb" type="password" name="" placeholder="Password">
+      <input class="login-btn" type="submit" name="" value="Login">
+  </form>
+  </div>
+
+  <script type="text/javascript">
+    $(".show-login-btn").on("click",function(){
+      $(".login-box").toggleClass("showed");
+    });
+    $(".hide-login-btn").on("click",function(){
+      $(".login-box").toggleClass("showed");
+    });
+  </script>
+</body>
+
+</html>

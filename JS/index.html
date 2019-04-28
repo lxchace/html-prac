@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <style media="screen">
+    #demo {
+      width: 200px;
+      height: 50px;
+      background: #999;
+      border: 1px solid #0000CD;
+      display: none;
+      position: relative;
+      left: 10px;
+      top: 10px;
+      float:none;
+    }
+    #cor{
+      height: 20px;
+      width: 100px;
+      border: 3px solid yellow;
+      margin-top: 10px;
+    }
+  </style>
+  <script type="text/javascript">
+    window.onload = function(){
+
+      document.getElementById("chkall").onclick = function(){
+        var chb = document.getElementById("chb");
+        var allchb = chb.getElementsByTagName("input");
+        for(var i = 0;i<allchb.length;i++){
+          allchb[i].checked = true;
+        }
+      }
+      document.getElementById("chknone").onclick = function(){
+        var chb = document.getElementById("chb");
+        var allchb = chb.getElementsByTagName("input");
+        for(var i = 0;i<allchb.length;i++){
+          allchb[i].checked = false;
+        }
+      }
+      document.getElementById("chkres").onclick = function(){
+        var chb = document.getElementById("chb");
+        var allchb = chb.getElementsByTagName("input");
+        for(var i = 0;i<allchb.length;i++){
+          if(allchb[i].checked == true){
+            allchb[i].checked = false;
+          }else {
+            allchb[i].checked = true;
+          }
+        }
+      }
+
+      
+    }
+  </script>
+</head>
+
+<body>
+  <div>
+    <input type="checkbox" name="" value="" onmouseover="fun1()" onmouseout="fun2()">
+    <div id="demo">为了您信息的安全。。。</div>
+  </div>
+  <div style="margin:30px;">
+    <input type="button" name="name" value="red" onclick="changecolor('red')">
+    <input type="button" name="name" value="green" onclick="changecolor('green')">
+    <input type="button" name="name" value="black" onclick="changecolor('black')">
+    <input type="button" name="name" value="变长" onclick="changeshape('width','200px')">
+    <input type="button" name="name" value="变高" onclick="changeshape('height','50px')">
+    <div id="cor"></div>
+  </div>
+  <div style="margin:30px;">
+    <input type="button" name="" id="chkall" value="全选 ">
+    <input type="button" name="" id="chknone" value="全不选 ">
+    <input type="button" name="" id="chkres" value="反选 ">
+    <div id="chb">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+      <input type="checkbox">
+    </div>
+  </div>
+  <script type="text/javascript">
+    function fun1() {
+      document.getElementById("demo").style.display = "block";
+    }
+
+    function fun2() {
+      document.getElementById("demo").style.display = "none";
+    }
+
+    function changecolor(color){
+      document.getElementById("cor").style.background = color;
+    }
+
+    function changeshape(name,num){
+      document.getElementById("cor").style[name] = num;
+    }
+  </script>
+</body>
+
+</html>
