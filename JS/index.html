@@ -14,9 +14,10 @@
       position: relative;
       left: 10px;
       top: 10px;
-      float:none;
+      float: none;
     }
-    #cor{
+
+    #cor {
       height: 20px;
       width: 100px;
       border: 3px solid yellow;
@@ -24,35 +25,35 @@
     }
   </style>
   <script type="text/javascript">
-    window.onload = function(){
+    window.onload = function() {
 
-      document.getElementById("chkall").onclick = function(){
+      document.getElementById("chkall").onclick = function() {
         var chb = document.getElementById("chb");
         var allchb = chb.getElementsByTagName("input");
-        for(var i = 0;i<allchb.length;i++){
+        for (var i = 0; i < allchb.length; i++) {
           allchb[i].checked = true;
         }
       }
-      document.getElementById("chknone").onclick = function(){
+      document.getElementById("chknone").onclick = function() {
         var chb = document.getElementById("chb");
         var allchb = chb.getElementsByTagName("input");
-        for(var i = 0;i<allchb.length;i++){
+        for (var i = 0; i < allchb.length; i++) {
           allchb[i].checked = false;
         }
       }
-      document.getElementById("chkres").onclick = function(){
+      document.getElementById("chkres").onclick = function() {
         var chb = document.getElementById("chb");
         var allchb = chb.getElementsByTagName("input");
-        for(var i = 0;i<allchb.length;i++){
-          if(allchb[i].checked == true){
+        for (var i = 0; i < allchb.length; i++) {
+          if (allchb[i].checked == true) {
             allchb[i].checked = false;
-          }else {
+          } else {
             allchb[i].checked = true;
           }
         }
       }
 
-      
+
     }
   </script>
 </head>
@@ -82,6 +83,15 @@
       <input type="checkbox">
     </div>
   </div>
+
+  <div>
+    <form class="" action="index.html" method="post" onsubmit="return validate_form(this)">
+      <input type="text" name="a" value="" placeholder="A">
+      <input type="password" name="b" id="" placeholder="B">
+      <input type="submit" value="提交">
+    </form>
+  </div>
+
   <script type="text/javascript">
     function fun1() {
       document.getElementById("demo").style.display = "block";
@@ -91,12 +101,36 @@
       document.getElementById("demo").style.display = "none";
     }
 
-    function changecolor(color){
+    function changecolor(color) {
       document.getElementById("cor").style.background = color;
     }
 
-    function changeshape(name,num){
+    function changeshape(name, num) {
       document.getElementById("cor").style[name] = num;
+    }
+
+    function validate_required(filed,alerttxt){
+      with(filed){
+        if(value==null||value==""){
+          alert(alerttxt);
+          return false;
+        }else{
+          return true;
+        }
+      }
+    }
+
+    function validate_form(thisform){
+      with(thisform){
+        if(validate_required(a,"a空")==false){
+          a.fouse();
+          return false;
+        }
+        if(validate_required(b,"b空")==false){
+          b.focus();
+          return false;
+        }
+      }
     }
   </script>
 </body>
